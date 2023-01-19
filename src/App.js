@@ -25,7 +25,7 @@ class App extends Component {
        let newTask = this.state.newTask
 
     this.setState({
-      tasks: this.state.tasks.concat({name: newTask, done: true}),
+      tasks: this.state.tasks.concat({name: newTask, done: false}),
       newTask: ''
      });
     }
@@ -53,7 +53,7 @@ class App extends Component {
         <div className="list">
           <h3>Por hacer:</h3>
           <ul className="todo">
-            {this.state.tasks.map((task, index) => <li onClick={this.endTask.bind(this)} className={task.done ? "done" : ""} key={task.id}>{task.name}</li>)}
+            {this.state.tasks.map((task, index) => <li onClick={this.endTask.bind(this)} className={task.done ? "done" : ""} key={task}>{task.name}</li>)}
           </ul>
           <form onSubmit={this.addTask.bind(this)}>
             <input type="text" id="new-task" className={ this.state.error ? "error" : "" } placeholder="Ingresa una tarea y oprime Enter" value={this.state.newTask} onChange={this.updateTask.bind(this)}/>
