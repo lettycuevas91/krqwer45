@@ -25,7 +25,7 @@ class App extends Component {
        let newTask = this.state.newTask
 
     this.setState({
-      tasks: this.state.tasks.concat({name: newTask, done: false}),
+      tasks: this.state.tasks.concat({name: newTask, done: true}),
       newTask: ''
      });
     }
